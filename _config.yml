@@ -7,7 +7,7 @@ description: Keyon Vafa's personal website
 
 # if it's an external image, update below for true
 # better with square images
-external-image: true
+external-image: false
 picture: assets/images/columbiaID6copy.jpg
 
 url: https://keyonvafa.github.io
