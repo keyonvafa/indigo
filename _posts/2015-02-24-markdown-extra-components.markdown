@@ -15,6 +15,7 @@ description: Markdown summary with different options
 
 ## Summary:
 
+<a href="{{site.base_url}}/files/thesis.pdf">Download Thesis</a>
 You can pick as item to see how to apply in markdown.
 
 #### Especial Elements
