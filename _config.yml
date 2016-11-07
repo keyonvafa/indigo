@@ -49,7 +49,7 @@ authors:
     keyonvafa:
         name: Keyon Vafa
         bio: Statistics PhD student focusing on machine learning
-        external-image: true
+        external-image: false
         picture: assets/images/profile.jpg
         twitter: keyonv
 
