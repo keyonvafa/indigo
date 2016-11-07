@@ -12,6 +12,9 @@ jemoji: '<img class="emoji" title=":ramen:" alt=":ramen:" src="https://assets.gi
 author: johndoe
 externalLink: false
 ---
+![Empirical Risk Landscape]({{site.base_url}}/img/nonconvex_empirical_risk.png)
+<a href="{{site.base_url}}/files/thesis.pdf">Download Thesis</a>
+
 
 ![Screenshot](https://raw.githubusercontent.com/sergiokopplin/indigo/gh-pages/assets/screen-shot.png)
 
