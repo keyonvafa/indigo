@@ -4,7 +4,7 @@ layout: post
 date: 2016-11-07 15:32
 headerImage: false
 blog: true
-star: true
+star: false
 author: keyonvafa
 description: First website post
 ---
