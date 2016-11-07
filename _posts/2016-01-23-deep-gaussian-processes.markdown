@@ -2,7 +2,6 @@
 title: "Training and Inference for Deep Gaussian Processes"
 layout: post
 date: 2016-11-07 14:38
-# image: /assets/images/step_1_2_layers_preds.png
 headerImage: false
 projects: true
 hidden: true # don't count this post in blog pagination
