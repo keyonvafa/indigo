@@ -11,7 +11,7 @@ externalLink: false
 ---
 #/assets/images/step_1_2_layers_preds.png
 
-![Screenshot]({{ site.url }}//assets/images/step_1_2_layers_preds.png)
+![Screenshot]({{ site.url }}/assets/images/step_1_2_layers_preds.png)
 
 Example of project - Indigo Minimalist Jekyll Template - [Demo](http://sergiokopplin.github.io/indigo/). This is a simple and minimalist template for Jekyll for those who likes to eat noodles.
 
