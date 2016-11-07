@@ -9,5 +9,5 @@ layout: page
 <h2>Projects</h2>
 
 <ul>
-	<li><a href="{{site.base_url}}/files/thesis.pdf">Training and Inference for Deep Gaussian Processes</a></li>
+	<li><a href="{{site.base_url}}/deep-gaussian-processes/">Training and Inference for Deep Gaussian Processes</a></li>
 </ul>
