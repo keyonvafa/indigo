@@ -2,16 +2,16 @@
 title: "Training and Inference for Deep Gaussian Processes"
 layout: post
 date: 2016-11-07 14:38
-image: /assets/images/step_1_2_layers_preds.png
-headerImage: true
+# image: /assets/images/step_1_2_layers_preds.png
+headerImage: false
 projects: true
 hidden: true # don't count this post in blog pagination
 author: keyonvafa
 externalLink: false
 ---
-TEST
+#/assets/images/step_1_2_layers_preds.png
 
-![Screenshot](https://raw.githubusercontent.com/sergiokopplin/indigo/gh-pages/assets/screen-shot.png)
+![Screenshot]({{ site.url }}//assets/images/step_1_2_layers_preds.png)
 
 Example of project - Indigo Minimalist Jekyll Template - [Demo](http://sergiokopplin.github.io/indigo/). This is a simple and minimalist template for Jekyll for those who likes to eat noodles.
 
