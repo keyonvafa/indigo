@@ -9,6 +9,8 @@ author: keyonvafa
 externalLink: false
 ---
 
+---
+
 ![Deep GP Posterior]({{ site.url }}/assets/images/step_1_2_layers_preds.png)
 
 ---
