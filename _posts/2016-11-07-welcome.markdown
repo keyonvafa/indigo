@@ -9,8 +9,6 @@ author: keyonvafa
 description: First website post
 ---
 
----
-
 ## Welcome!
 
 Welcome to my personal website! I plan to update this site regularly throughout my time as a Ph.D. student at Columbia University, where I am focusing on machine learning. I hope to not only post about the progress of my research, but to also explore other ideas at the forefront of machine learning and make them more accessible, whether that be in the form of paper summaries or Python tutorials. Look for the website to pick up more content in the upcoming months and years, but for now, check out my <a href="{{site.base_url}}/deep-gaussian-processes/">undergraduate thesis</a> on deep Gaussian processes, or simply head to the <a href="{{site.base_url}}/about/">About</a> section. 
