@@ -8,7 +8,6 @@ hidden: true # don't count this post in blog pagination
 author: keyonvafa
 externalLink: false
 ---
-#/assets/images/step_1_2_layers_preds.png
 
 ![Screenshot]({{ site.url }}/assets/images/step_1_2_layers_preds.png)
 
