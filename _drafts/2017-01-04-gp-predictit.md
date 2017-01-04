@@ -1,21 +1,24 @@
 ---
+title: "Betting on Politics with Gaussian Processes"
 layout: post
-title: "Markdown Tutorial"
-categories: general
-author: scott linderman
-excerpt_separator: <!--more-->
-comments: true
+date: 2017-01-04 05:19
+headerImage: false
+blog: true
+star: false
+author: keyonvafa
+description: Applying Guassian Proccesses to PredictIt
 ---
 
-Use this template as a starting point for your post.
-The file name is important, it must be of the form
-YYYY-MM-DD-shortname.md in order for it to be properly
-sorted by date. Don't use underscores in the shortname.
+Happy new year everyone! 
 
-<!--more-->
+In this post, I'll provide a quick tutorial on using Gaussian processes for regression and walk through one of my favorite applications: betting on political data on the website PredictIt. This post is intended for anyone who has taken an intro probability class and has basic machine learning experience, as my main goal is to provide intuition for Gaussian processes. Thus, it is not meant to be exhaustive at all. Be sure to check out Carl Rasmussen and Christopher Williams's excellent textbook Gaussian Processes for Machine Learning (<a href="http://www.gaussianprocess.org/gpml/">available for free online</a>) for a more comprehensive reference. 
 
-Use the excerpt_separator to mark the end of the short intro
-(that's all that show's up on the homepage)
+We begin by overviewing Gaussian processes (GPs). If you would like to skip the overview and go straight to the betting example, go to [click on this link](#my-multi-word-header). 
+
+What is a Gaussian process? Frequently, it is referred to as the infinite-dimensional extension of the multivariate normal distribution (CITE?). This may be confusing, because we typically don't observe random variables with infinitely many components. However, when we work with GPs, the intuition is that we observe some finite-dimensional subset of infinite-dimensional data, and this finite subset follows a multivariate normal distribution, as would every finite subset.
+
+### My Multi Word Header
+
 
 # This is a first level heading
 
