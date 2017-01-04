@@ -43,11 +43,11 @@ Finally, I calculated my estimates for each PredictIt bucket for January 9:
 
 | Approval Rating | "Yes" Price   | "Yes" Probability  | "No" Price | "No" Probability |
 | :-------------: |:-------------:| :-----------------:|:----------:|:----------------:|
-| 15.0% or higher | $.04          | 20%                | $.97       | 80%              |
-| 14.5% - 14.9%   | $.75          | 31%                | $.33       | 69%              |
-| 14.0% - 14.4%   | $.27          | 30%                | $.79       | 70%              |
-| 13.5% - 13.9%   | $.11          | 14%                | $.96       | 86%              |
-| 13.4% or lower  | $.03          | 4%                 | $.97       | 96%              |
+| 15.0% or higher | $0.04          | 20%                | $0.97       | 80%              |
+| 14.5% - 14.9%   | $0.75          | 31%                | $0.33       | 69%              |
+| 14.0% - 14.4%   | $0.27          | 30%                | $0.79       | 70%              |
+| 13.5% - 13.9%   | $0.11          | 14%                | $0.96       | 86%              |
+| 13.4% or lower  | $0.03          | 4%                 | $0.97       | 96%              |
 
 Thus, the most under-valued markets are buying "Yes" for "15.0% or higher" ($.04 for 20%) and buying "No" for "14.5% - 14.9%" ($.33 for 69%). The remaining markets more-or-less align. 
 
