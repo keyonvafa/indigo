@@ -76,6 +76,15 @@ A subtle note is that typically we do not have access to the function values the
 
 ## Betting on PredictIt with Gaussian Processes
 
+Now that we're all experts on GPs, let's use them to make money. One of my favorite websites is <a href='https://www.predictit.org/'> PredictIt</a>, which provides prediction markets for betting on politics. Many of these markets are not explicitly quantitative, such as <a href="https://www.predictit.org/Contract/4500/Will-there-be-a-Putin-Trump-meeting-in-US-in-Trump's-first-100-days#dat">Will there be a Putin-Trump meeting in U.S. in Trump's first 100 days?</a>. However, certain markets involve predicting polling numbers or election winners, which are possible to model with machine learning techniques.
+
+In this post, I'm going to focus on the market <a href='https://www.predictit.org/Market/2845/What-will-congressional-job-approval-be-on-January-9'>What will congressional job approval be on January 9?</a> (today is January 4). The congressional job approval is taken from a polling average aggregated on the website <a href='http://www.realclearpolitics.com/epolls/other/congressional_job_approval-903.html'>RealClearPolitics<a/>, which averages polls from Gallup, Monmouth, and Economist/YouGov, among others. There are five possible buckets for the average job approval on January 9, and users can either "Buy Yes" or "Buy No" on each outcome. 
+
+![Congress PredictIt Screenshot]({{site.base_url}}/assets/images/gp_predictit_blog/congress_predictit_screenshot.pdf)
+
+For example, in the screenshot above, we can "Buy Yes" on "14.0% - 14.4%" for $0.27. We will then be rewarded with $0.73 if the average congressional job approval is between 14.0% and 14.4%, and we will lose our $0.27 otherwise. Thus, if we believe that the probability of the job approval being in this range is larger than 27%, we should buy this share. Similarly, we can "Buy No" for $0.79, and if the job approval is _not_ in this range we will be rewarded with $0.21.
+
+
 
 > This is a
 > blockquote
