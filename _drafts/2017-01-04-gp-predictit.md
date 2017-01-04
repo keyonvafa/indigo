@@ -11,20 +11,16 @@ description: Applying Guassian Proccesses to PredictIt
 
 Happy new year everyone! 
 
-In this post, I'll provide a quick tutorial on using Gaussian processes for regression and walk through one of my favorite applications: betting on political data on the website PredictIt. This post is intended for anyone who has taken an intro probability class and has basic machine learning experience, as my main goal is to provide intuition for Gaussian processes. Thus, it is not meant to be exhaustive at all. Be sure to check out Carl Rasmussen and Christopher Williams's excellent textbook Gaussian Processes for Machine Learning (<a href="http://www.gaussianprocess.org/gpml/">available for free online</a>) for a more comprehensive reference. 
+In this post, I'll provide a quick tutorial on using Gaussian processes for regression and walk through one of my favorite applications: betting on political data on the website PredictIt. This post is intended for anyone who has taken an intro probability class and has basic machine learning experience, as my main goal is to provide intuition for Gaussian processes. Thus, it is not meant to be exhaustive at all. Be sure to check out Carl Rasmussen and Christopher Williams's excellent textbook _Gaussian Processes for Machine Learning_ (<a href="http://www.gaussianprocess.org/gpml/">available for free online</a>) for a more comprehensive reference. 
 
-We begin by overviewing Gaussian processes (GPs). If you would like to skip the overview and go straight to the betting example, jump ahead to the [next section](#betting-on-predictit-with-gps). 
+We begin by overviewing Gaussian processes (GPs). If you would like to skip the overview and go straight to the betting example, jump ahead to the [next section](#betting-on-predictit-with-gaussian-proccesses). 
+
+## Gaussian Process Tutorial
 
 What is a Gaussian process? Frequently, it is referred to as the infinite-dimensional extension of the multivariate normal distribution (CITE?). This may be confusing, because we typically don't observe random variables with infinitely many components. However, when we work with GPs, the intuition is that we observe some finite-dimensional subset of infinite-dimensional data, and this finite subset follows a multivariate normal distribution, as would every finite subset.
 
-### Betting on PredictIt with GPs
+## Betting on PredictIt with Gaussian Processes
 
-
-# This is a first level heading
-
-## This is a second level heading
-
-## This is a third level heading
 
 > This is a
 > blockquote
