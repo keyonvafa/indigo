@@ -50,7 +50,7 @@ Finally, I calculated my estimates for each PredictIt bucket for January 9:
 | 13.4% or lower  | $0.03          | 4%                 | $0.97       | 96%              |-->
 
 \begin{array}{c|cccc}
-\text{Approval Rating} & \text{Listed "Yes" Price} & \text{Model "Yes" Probability} & \text{Listed "No" Price} & \text{Model "No" Probability} \\\
+\text{Approval Rating} & \text{"Yes" Price} & \text{Model "Yes" Probability} & \text{"No" Price} & \text{Model "No" Probability} \\\
 \hline\text{15.0% or higher}  & $0.04    &  20\%   & $0.97  & 80\%\\\
 \text{14.5% - 14.9%}  & $0.75 & 31\% & $0.33 & 69\%\\\
 \text{14.0% - 14.4%}  & $0.27 & 30\% & $0.79 & 70\%\\\
