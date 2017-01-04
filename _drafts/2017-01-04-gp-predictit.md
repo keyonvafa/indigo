@@ -37,7 +37,7 @@ After choosing my hyper-parameters, I calculated the predictive mean for the pas
 
 ![Predictions]({{site.base_url}}/assets/images/gp_predictit_blog/predictions.png)
 
-The dashed red-line represents the predictive mean at each time point, and the shaded purple represents the 95\% confidence interval. As we can see, the data fits nicely, and, as desired, the uncertainty of the estimates increases as we look at the next 100 days. If anything, there appears to be a slight downward trend as we head into the future, perhaps reflecting that most recently, the approval ratings have been decreasing. 
+The dashed red-line represents the predictive mean at each time point, and the shaded purple represents the 95% confidence interval. As we can see, the data fits nicely, and, as desired, the uncertainty of the estimates increases as we look at the next 100 days. If anything, there appears to be a slight downward trend as we head into the future, perhaps reflecting that most recently, the approval ratings have been decreasing. 
 
 Finally, I calculated my estimates for each PredictIt bucket for January 9:
 
@@ -49,10 +49,10 @@ Finally, I calculated my estimates for each PredictIt bucket for January 9:
 | 13.5% - 13.9%   | $.11          | 14%                | $.96       | 86%              |
 | 13.4% or lower  | $.03          | 4%                 | $.97       | 96%              |
 
-Thus, the most under-valued markets are buying "Yes" on "15.0% or higher" ($.04 for 20%) and buying "No" on "14.5% - 14.9%" ($.33 for 69%). The remaining markets more-or-less align. 
+Thus, the most under-valued markets are buying "Yes" for "15.0% or higher" ($.04 for 20%) and buying "No" for "14.5% - 14.9%" ($.33 for 69%). The remaining markets more-or-less align. 
 
 I find it interesting that the "Yes" price is so high for "14.5% - 14.9%" compared to my model. The most recent polling average was 14.5 for January 3, which is right on the border of the second and third buckets (recall we're trying to make estimates for January 9). My guess is that this reflects some outside knowledge such as no polls being conducted in the next 5 days. 
 
-Regardless, I bought 50 shares of "Yes" on "15.0% or higher" (for a total of $2.00) and 12 shares of "No" on "14.5% - 14.9" (for a total of $3.96). I'll be sure to provide updates with how much money I win/lose. I'd love to try out more elaborate kernels or even a <a href="{{site.base_url}}/deep-gaussian-processes/">deep Gaussian Process</a> in future posts and see how these models fare.
+Regardless, I bought 50 shares of "Yes" for "15.0% or higher" (for a total of $2.00) and 12 shares of "No" for "14.5% - 14.9" (for a total of $3.96). I'll be sure to provide updates with how much money I win/lose. I'd love to try out more elaborate kernels or even a <a href="{{site.base_url}}/deep-gaussian-processes/">deep Gaussian Process</a> in future posts and see how these models fare.
 
 All my code is available here (LINK). 
