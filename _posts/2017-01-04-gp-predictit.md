@@ -37,7 +37,7 @@ After choosing my hyper-parameters, I calculated the predictive mean for the pas
 
 ![Predictions]({{site.base_url}}/assets/images/gp_predictit_blog/predictions.png)
 
-The dashed red-line represents the predictive mean at each time point, and the shaded purple represents the 95% confidence interval. As we can see, the data fits nicely, and, as desired, the uncertainty of the estimates increases as we move away from the data and model the next 100 days. If anything, there appears to be a slight downward trend as we head into the future, perhaps reflecting that most recently, the approval ratings have been decreasing. 
+The dashed red line represents the predictive mean at each time point, and the shaded purple represents the 95% confidence interval. As we can see, the data fits nicely, and, as desired, the uncertainty of the estimates increases as we move away from the data and model the next 100 days. If anything, there appears to be a slight downward trend as we head into the future, perhaps reflecting that most recently, the approval ratings have been decreasing. 
 
 Finally, I calculated my estimates for each PredictIt bucket for January 9:
 
