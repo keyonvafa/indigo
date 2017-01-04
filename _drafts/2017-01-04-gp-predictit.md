@@ -19,7 +19,7 @@ In this post, I'm going to focus on the market <a href='https://www.predictit.or
 
 ![Congress PredictIt Screenshot]({{site.base_url}}/assets/images/gp_predictit_blog/congress_predictit_screenshot.pdf)
 
-For example, in the screenshot above, we can "Buy Yes" on "14.0% - 14.4%" for $0.27. We will then be rewarded with $0.73 if the average congressional job approval is between 14.0% and 14.4% on January 9, and we will lose our $0.27 otherwise. Thus, if we believe that the probability of the job approval being in this range is larger than 27%, we should buy this share. Similarly, we can "Buy No" for $0.79, and if the job approval is _not_ in this range we will be rewarded with $0.21.
+For example, in the screenshot above, we can "Buy Yes" for "14.0% - 14.4%" for $0.27. We will then be rewarded with $0.73 if the average congressional job approval is between 14.0% and 14.4% on January 9, and we will lose our $0.27 otherwise. Thus, if we believe that the probability of the job approval being in this range is larger than 27%, we should buy this share. Similarly, we can "Buy No" for $0.79, and if the job approval is _not_ in this range we will be rewarded with $0.21.
 
 In R, I scraped the past 1000 days of approval data from the RealClearPolitics website. If I train a GP on these data points, I can not only make predictions for the average job approval for January 9, but I can also use the predictive variance to assess my certainty of these estimates. This makes it possible to calculate the probability of being in any of the five buckets on PredictIt under my model. Thus, if one of my probabilities is significantly different from any of the market values, I should go ahead and buy shares and make $$$ (assuming, of course, that this model is correct).
 
