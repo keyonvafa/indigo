@@ -1,5 +1,5 @@
 ---
-title: "Betting on Politics with Gaussian Processes"
+title: "Gaussian Process Tutorial"
 layout: post
 date: 2017-01-04 05:19
 headerImage: false
@@ -9,11 +9,9 @@ author: keyonvafa
 description: Applying Guassian Proccesses to PredictIt
 ---
 
-Happy new year everyone! 
+_This is the first part of a two part blog post on Gaussian processes. If you would like to skip this overview and go straight to making money with Gaussian processes, jump ahead to the second part._
 
-In this post, I'll provide a quick tutorial on using Gaussian processes for regression and walk through one of my favorite applications: betting on political data on the website PredictIt. This post is intended for anyone who has taken an intro probability class and has basic machine learning experience, as my main goal is to provide intuition for Gaussian processes. Thus, it is not meant to be exhaustive at all. Be sure to check out Carl Rasmussen and Christopher Williams's excellent textbook _Gaussian Processes for Machine Learning_ (<a href="http://www.gaussianprocess.org/gpml/">available for free online</a>) for a more comprehensive reference. 
-
-We begin by overviewing Gaussian processes (GPs). If you would like to skip the overview and go straight to the betting example, jump ahead to the [next section](#betting-on-predictit-with-gaussian-proccesses). 
+In this post, I'll provide a quick tutorial on using Gaussian processes for regression, mainly to prepare for a post on one of my favorite applications: betting on political data on the website PredictIt. This post is intended for anyone who has taken an intro probability class and has basic machine learning experience, as my main goal is to provide intuition for Gaussian processes. Thus, it is not meant to be exhaustive at all. Be sure to check out Carl Rasmussen and Christopher Williams's excellent textbook _Gaussian Processes for Machine Learning_ (<a href="http://www.gaussianprocess.org/gpml/">available for free online</a>) for a more comprehensive reference. 
 
 ## Gaussian Process Tutorial
 
@@ -74,8 +72,9 @@ A subtle note is that typically we do not have access to the function values the
 
 Thus, we can make predictions and compute their uncertainty in closed form. How do we choose the hyper-parameters $$\boldsymbol \theta$$ (which consists of $$h,\alpha,l,$$ and $$\sigma^2_{\epsilon}$$ in the case of the RQ covariance)? Recall that we are assuming $$\boldsymbol y \sim \mathcal{N}(\boldsymbol m_{\boldsymbol X}, \boldsymbol K_{\boldsymbol X \boldsymbol X})$$, so the marginal likelihood of the data $$p(\boldsymbol y | \boldsymbol X, \boldsymbol \theta)$$ is the multivariate normal density. Thus, we can choose our hyper-parameters by setting them to the values that maximize the marginal likelihood (or, more easily, the log marginal likelihood, as log is monotonic) with respect to $$\boldsymbol \theta$$. Typically, we do this with black-box optimizers in Python or R. 
 
-
 <a href='http://www.gaussianprocess.org/gpml/chapters/RW2.pdf'>Rasmussen and Williams</a> show that the likelihood incorporates a tradeoff between fit and model complexity, so overfitting tends to be less significant a problem in GP regression. A downside, however, is that every iteration of optimization requires the inversion of an $N \times N$ matrix, which is $\mathcal O(N^3)$. 
+
+Now that we're all experts on GPs, head to the second part of this blog post to learn how to make money with GPs.
 
 ## Betting on PredictIt with Gaussian Processes
 
