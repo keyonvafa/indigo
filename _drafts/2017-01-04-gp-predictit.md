@@ -17,7 +17,7 @@ We begin by overviewing Gaussian processes (GPs). If you would like to skip the 
 
 ## Gaussian Process Tutorial
 
-What is a Gaussian process? Frequently, it is referred to as the infinite-dimensional extension of the multivariate normal distribution (CITE?). This may be confusing, because we typically don't observe random variables with infinitely many components. However, when we work with GPs, the intuition is that we observe some finite-dimensional subset of infinite-dimensional data, and this finite subset follows a multivariate normal distribution, as would every finite subset.
+What is a Gaussian process? Frequently, it is referred to as the infinite-dimensional extension of the multivariate normal distribution. This may be confusing, because we typically don't observe random variables with infinitely many components. However, when we work with GPs, the intuition is that we observe some finite-dimensional subset of infinite-dimensional data, and this finite subset follows a multivariate normal distribution, as would every finite subset.
 
 For example, suppose we measure the temperature every day of the year at noon, resulting in a 365-dimensional vector. In reality, temperature is a continuous process, and the choice to take a measurement every day at noon is arbitrary. What would happen if we took the temperature in the evening instead? What if we took measurements every hour or every week? If we model the data with a GP, we are assuming that each of these possible data collection schemes would yield data from a multivariate normal distribution. 
 
@@ -107,7 +107,7 @@ The dashed red-line represents the predictive mean at each time point, and the s
 
 Finally, I calculated my estimates for each PredictIt bucket for January 9:
 
-| Approval Rating | 'Yes' Price   | 'Yes' Probability  | 'No' Price | 'No' Probability |
+| Approval Rating | "Yes" Price   | "Yes" Probability  | "No" Price | "No" Probability |
 | :-------------: |:-------------:| :-----------------:|:----------:|:----------------:|
 | 15.0% or higher | $.04          | 20%                | $.97       | 80%              |
 | 14.5% - 14.9%   | $.75          | 31%                | $.33       | 69%              |
@@ -115,67 +115,10 @@ Finally, I calculated my estimates for each PredictIt bucket for January 9:
 | 13.5% - 13.9%   | $.11          | 14%                | $.96       | 86%              |
 | 13.4% or lower  | $.03          | 4%                 | $.97       | 96%              |
 
+Thus, the most under-valued markets are buying "Yes" on "15.0% or higher" ($.04 for 20%) and buying "No" on "14.5% - 14.9%" ($.33 for 69%). The remaining markets more-or-less align. 
 
-> This is a
-> blockquote
-> with
->
-> two paragraphs
+I find it interesting that the "Yes" price is so high for "14.5% - 14.9%" compared to my model. The most recent polling average was 14.5 for January 3, which is right on the border of the second and third buckets (recall we're trying to make estimates for January 9). My guess is that this reflects some outside knowledge such as no polls being conducted in the next 5 days. 
 
-This is a list:
-* A
-* B
-* C
+Regardless, I bought 50 shares of "Yes" on "15.0% or higher" (for a total of $2.00) and 12 shares of "No" on "14.5% - 14.9" (for a total of $3.96). I'll be sure to provide updates with how much money I win/lose. I'd love to try out more elaborate kernels or even a <a href="{{site.base_url}}/deep-gaussian-processes/">deep Gaussian Process</a> in future posts and see how these models fare.
 
-If your list items span multiple paragraphs, intend the items with three spaces.
-Here the list is enumerated.
-
-1.   This is the first sentence.
-
-     This is the second sentence.
-
-2.   And so on...
-
-3.   And so forth...
-
-This is **bold text**.
-This is _italic text_.
-This is ~~strikeout text~~.
-
-This is an inline equation: $$a^2 + b^2 = c^2$$. You have to use two
-dollar signs to open and close, not one like in Latex.
-To have a centered equation, write it as a pararaph that starts and
-ends with the two dollar signs:
-
-$$
-p(\theta \, | \, y) \propto p(\theta) \, 
-p(y \, | \, \theta).
-$$
-
-I don't think you can do align blocks yet.
-
-This is `inline  code`. 
-Code blocks are intended paragraphs with four spaces:
-
-```python
-F = lambda n: ((1+np.sqrt(5))**n - (1-np.sqrt(5))**n) / (2**n * np.sqrt(5))
-```
-This is a figure. Note that `site.base_url` refers to the homepage.
-In this case, `abc.png` is located in the `img` folder under root.
-
-![ABC]({{site.base_url}}/img/abc.png)
-
-### References
-I've just been copying and pastying references as follows: 
-
-[1] Meeds, Edward, Robert Leenders, and Max Welling. "Hamiltonian ABC." _arXiv preprint arXiv:1503.01916_ (2015). [link](http://arxiv.org/pdf/1503.01916)
-...
-
-### Footnotes
-Here's my trick for footnotes. You can write HTML inside markdown, so I just create a
-div with the id footnotes and then add a link[<sup>1</sup>](#footnotes)
-
-<div id="footnotes"></div>
-1. like this.
-2. ...
-
+All my code is available here (LINK). 
