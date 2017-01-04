@@ -49,7 +49,8 @@ Note that after Numpy and defining the RQ covariance, these plots are generated 
 
 ```python
     plot_xs = np.reshape(np.linspace(-5, 5, 300), (300,1))
-    sampled_funcs = np.random.multivariate_normal(np.ones(len(plot_xs)), rq_covariance(params,plot_xs,plot_xs), size=10)
+    sampled_funcs = np.random.multivariate_normal(np.ones(len(plot_xs)), rq_covariance(params,plot_xs,plot_xs), \
+                        size=10)
     ax.plot(plot_xs, sampled_funcs.T)
 ```
 
