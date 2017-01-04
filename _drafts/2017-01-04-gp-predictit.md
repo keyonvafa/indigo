@@ -72,6 +72,9 @@ This is a known result of the multivariate normal distribution; if this is resul
 
 A subtle note is that typically we do not have access to the function values themselves, but rather noisy observations $$y_n = f(\boldsymbol x_n) + \epsilon_n$$ where $$\epsilon_n \sim \mathcal N(0, \sigma^2_\epsilon)$$ i.i.d. We can incorporate this noise into our model by adding $$\sigma_\epsilon^2$ to every diagonal term in $$\boldsymbol K_{\boldsymbol X \boldsymbol X}$$, which corresponds to an updated kernel.
 
+Thus, we can make predictions and compute their uncertainty in closed form. How do we choose the hyper-parameters $$\boldsymbol \theta$$ (which consists of $$h,\alpha,l,$$ and $$\sigma^2_{\epsilon}$$ in the case of the RQ covariance)? Recall that we are assuming $$\boldsymbol y \sim \mathcal{N}(\boldsymbol m_{\boldsymbol X}, \boldsymbol K_{\boldsymbol X \boldsymbol X})$$, so the marginal likelihood of the data $$p(\boldsymbol y | \boldsymbol X, \boldsymbol \theta)$$ is the multivariate normal density. Thus, we can choose our hyper-parameters by setting them to the values that maximize the marginal likelihood (or, more easily, the log marginal likelihood, as log is monotonic) with respect to $$\boldsymbol \theta$$. Typically, we do this with black-box optimizers in Python or R. 
+
+
 <a href='http://www.gaussianprocess.org/gpml/chapters/RW2.pdf'>Rasmussen and Williams</a> show that the likelihood incorporates a tradeoff between fit and model complexity, so overfitting tends to be less significant a problem in GP regression. A downside, however, is that every iteration of optimization requires the inversion of an $N \times N$ matrix, which is $\mathcal O(N^3)$. 
 
 ## Betting on PredictIt with Gaussian Processes
@@ -82,8 +85,33 @@ In this post, I'm going to focus on the market <a href='https://www.predictit.or
 
 ![Congress PredictIt Screenshot]({{site.base_url}}/assets/images/gp_predictit_blog/congress_predictit_screenshot.pdf)
 
-For example, in the screenshot above, we can "Buy Yes" on "14.0% - 14.4%" for $0.27. We will then be rewarded with $0.73 if the average congressional job approval is between 14.0% and 14.4%, and we will lose our $0.27 otherwise. Thus, if we believe that the probability of the job approval being in this range is larger than 27%, we should buy this share. Similarly, we can "Buy No" for $0.79, and if the job approval is _not_ in this range we will be rewarded with $0.21.
+For example, in the screenshot above, we can "Buy Yes" on "14.0% - 14.4%" for $0.27. We will then be rewarded with $0.73 if the average congressional job approval is between 14.0% and 14.4% on January 9, and we will lose our $0.27 otherwise. Thus, if we believe that the probability of the job approval being in this range is larger than 27%, we should buy this share. Similarly, we can "Buy No" for $0.79, and if the job approval is _not_ in this range we will be rewarded with $0.21.
 
+In R, I scraped the past 1000 days of approval data from the RealClearPolitics website. If I train a GP on these data points, I can not only make predictions for the average job approval for January 9, but I can also use the predictive variance to assess my certainty of these estimates. This makes it possible to calculate the probability of being in any of the five buckets on PredictIt under my model. Thus, if one of my probabilities is significantly different from any of the market values, I should go ahead and buy shares and make $$$ (assuming, of course, that this model is correct).
+
+A few words of caution before proceeding: this model is not correct. There are many possible ways to model time series data, and a GP is just one of them. Any model that can generate predictions and uncertainty estimates would be exciting to try, and I used a GP because it's one of my favorite models. Additionally, we are trying to model polling averages, so treating each poll individually should provide more fruitful estimates. Finally, the prices on PredictIt reflect more knowledge than simply the past 1,000 days; they take into account current events, such as whether Congress just did something unpopular (such as <a href='http://www.nytimes.com/2017/01/02/us/politics/with-no-warning-house-republicans-vote-to-hobble-independent-ethics-office.html'>trying to remove an ethics committee</a>), and the schedule of poll releases. Our model uses only prior data, so somehow accounting for these factors would make it more robust.
+
+Once I scraped the data, I removed consecutive days where the average didn't change. I did this becuase there are some days where no new polls are added to the aggregate, so I removed them instead of accounting for these days in the model. The data is below:
+
+![Raw Data]({{site.base_url}}/assets/images/gp_predictit_blog/raw_data.png)
+
+I chose to use a constant mean function and the rational quadratic covariance function (RQ) as my kernel. This is an area where the model can be significantly improved: I would imagine it's more appropriate to use some combination of kernels, especially if there is a linear or periodic effect. However, the RQ kernel appeared to provide sensible results, so I stuck with it.
+
+I then used R's `optim` command to optimize the log-likelihood $$p(\boldsymbol y | \boldsymbol X, \boldsymbol \theta)$$ where $$\boldsymbol y$$ is the polling data averages, $$\boldsymbol X$$ consists of the days corresponding to the polling data, and $$\boldsymbol \theta$$ are the RQ hyper-parameters along with the noise-scale $$\sigma^2_{\epsilon}$$ and the constant mean parameter. Because some of these parameters were constrained to be positive, I parameterized them by their log when optimizing, which could be any real value.
+
+After choosing my hyper-parameters, I calculated the predictive mean for the past 1000 days and the next 100 along with the 95% confidence interval using the predictive covariance:
+
+![Predictions]({{site.base_url}}/assets/images/gp_predictit_blog/predictions.png)
+
+The dashed red-line represents the predictive mean at each time point, and the shaded purple represents the 95\% confidence interval. As we can see, the data fits nicely, and, as desired, the uncertainty of the estimates increases as we look at the next 100 days. If anything, there appears to be a slight downward trend as we head into the future, perhaps reflecting that most recently, the approval ratings have been decreasing. 
+
+Finally, I calculated my estimates for each PredictIt bucket for January 9:
+
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
 
 
 > This is a
