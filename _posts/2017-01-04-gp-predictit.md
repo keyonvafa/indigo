@@ -69,3 +69,7 @@ I find it interesting that the "Yes" price is so high for "14.5% - 14.9%" compar
 Regardless, I bought 50 shares of "Yes" for "15.0% or higher" (for a total of $2.00) and 12 shares of "No" for "14.5% - 14.9" (for a total of $3.96). I'll be sure to provide updates with how much money I win/lose. I'd love to try out more elaborate kernels or even a <a href="{{site.base_url}}/deep-gaussian-processes/">deep Gaussian Process</a> in future posts and see how these models fare.
 
 All my code is available <a href="https://github.com/keyonvafa/gp-predictit-blog">here<a/>. 
+
+### Update
+
+I didn't make any money with these shares -- as I predicted, RCP didn't add any more polls to the aggregate average. In the future, I'll tweak this model and hopefully find ways to account for the timing of polls. Stay tuned!
