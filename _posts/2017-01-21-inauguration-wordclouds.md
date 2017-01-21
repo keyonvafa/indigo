@@ -6,7 +6,7 @@ headerImage: false
 blog: true
 star: false
 author: keyonvafa
-description: Graphics illustrating Inauguration speeches.
+description: Illustrating inauguration speeches with word clouds.
 ---
 
 Trump's inauguration was yesterday, and we're all coping with it in different ways. Instead of watching yesterday's events, I decided to download a bunch of inaugural addresses and make some word clouds (jump ahead a little bit if you're curious about the more technical details).
