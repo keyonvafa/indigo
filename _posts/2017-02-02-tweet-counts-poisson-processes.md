@@ -52,3 +52,4 @@ It looks like my model prefers lower tweet counts since it accounts for all post
 
 At any rate, I decided to buy 5 shares of "Yes" for 35-39 tweets, 2 shares of "No" for 45-49 tweets, and 2 shares of "No" for 50-54 tweets (everywhere my model differed with the market prices by at least 10 percentage points). Stay tuned for updates on how I do, along with a more complicated model. 
 
+All code is available <a href='https://github.com/keyonvafa/tweet-count-poisson-blog'>here</a>.
