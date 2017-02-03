@@ -20,7 +20,7 @@ I started by scraping Trump's tweets on Twitter -- I essentially lifted code fro
 I decided to model the number of weekly tweets as a Poisson process. For those unfamiliar with a Poisson process, the main idea is that the number of tweets $$N(t)$$ in a given interval, say $$[0,t)$$ where $$t$$ is a scalar denoting seconds, is given by a Poisson distribution with some rate $$\lambda$$:
 
 $$
-N(t) \sim \text{Pois}(\lambda),\text{so } P(N(t) = t) = \frac{(\lambda t)^n}{n!}e^{-\lambda t}.
+N(t) \sim \text{Pois}(\lambda t),\text{so } P(N(t) = t) = \frac{(\lambda t)^n}{n!}e^{-\lambda t}.
 $$
 
 Moreover, this model assumes that the number of tweets in any disjoint interval is independent, and that the rate is constant for any fixed length. These assumptions are definitely wrong. There are numerous instances where Trump has rapidly strung a series of tweets together on the same topic one after another, which breaks both assumptions. Additionally, the rate is not constant, as he is much more likely to tweet during the day than <a href=
