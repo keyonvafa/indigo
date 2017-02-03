@@ -17,7 +17,7 @@ At the time of this writing, the market looked like the following: 8 buckets for
 
 I started by scraping Trump's tweets on Twitter -- I essentially lifted code from <a href='http://www.craigaddyman.com/mining-all-tweets-with-python/'>this tutorial</a> by Craig Addyman. I only downloaded his last 1800 tweets, which seemed like enough because I reasoned his older tweeting habits wouldn't be so informative nowadays.
 
-I decided to model the number of weekly tweets as a Poisson process. For those unfamiliar with a Poisson process, the main idea is that the number of tweets $$N(t)$$ in a given interval, say $$[0,t)$$ where $$t$$ is a scalar denoting seconds, is given by a Poisson distribution with some rate $$\lambda$$:
+I decided to model the number of weekly tweets as a Poisson process. For those unfamiliar with a Poisson process, the main idea is that the number of tweets $$N(t)$$ in a given interval, say $$[0,t)$$ where $$t$$ is a scalar denoting seconds, is given by a Poisson distribution with some rate $$\lambda * t$$:
 
 $$
 N(t) \sim \text{Pois}(\lambda t),\text{so } P(N(t) = t) = \frac{(\lambda t)^n}{n!}e^{-\lambda t}.
