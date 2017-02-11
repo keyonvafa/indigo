@@ -13,9 +13,47 @@ _Last week, <a href='http://keyonvafa.com/tweet-counts-poisson-processes/'>I wro
 
 I'm interested in estimating the number of tweets President Trump will post in a given week so I can use the model to <a href='https://www.predictit.org/Market/2956/How-many-tweets-will-%40realDonaldTrump-post-from-noon-Feb-8-to-noon-Feb-15'>bet on PredictIt</a>. <a href='http://keyonvafa.com/tweet-counts-poisson-processes/'>My post last week</a> demonstrated that a stationary Poisson process had some weaknesses -- the rate wasn't constant everywhere, and Trump's tweets seemed to self-excite (i.e. if he's in the middle of a tweet storm, he's likely to keep tweeting).
 
-In this post, I'll focus on modeling tweet counts as a Poisson _generalized linear model_ (GLM). (You probably won't need to know much about GLMs to understand this post, but if you're interested, the <a href ='https://www.amazon.com/Generalized-Chapman-Monographs-Statistics-Probability/dp/0412317605'>canonical text</a> is by <a href='https://galton.uchicago.edu/~pmcc/'>Peter McCullagh</a> and <a href='https://en.wikipedia.org/wiki/John_Nelder'>John Nelder</a>.) The model will be autoregressive, as I will include the tweet counts for the previous few days among my set of predictors.
+In this post, I'll focus on modeling tweet counts as a Poisson _generalized linear model_ (GLM). (You probably won't need to know much about GLMs to understand this post, but if you're interested, the <a href ='https://www.amazon.com/Generalized-Chapman-Monographs-Statistics-Probability/dp/0412317605'>canonical text</a> is by <a href='https://galton.uchicago.edu/~pmcc/'>Peter McCullagh</a> and <a href='https://en.wikipedia.org/wiki/John_Nelder'>John Nelder</a>. I also highly recommend <a href='http://www.stat.ufl.edu/~aa/'>Alan Agresti's</a> <a href='https://www.amazon.com/Foundations-Linear-Generalized-Probability-Statistics/dp/1118730038'>textbook</a>, which I used in his class.) The model will be autoregressive, as I will include the tweet counts for the previous few days among my set of predictors.
 
-First I'll go over the technical model details, so [jump ahead](#results) if you're interested in the results.
+First I'll go over the results, so [jump ahead](#model) if you're interested in the more technical model details.
+
+## Results
+
+In short, my model uses simulations to predict the weekly tweet count probabilities. That is, it simulates 5,000 possible versions of the week, and counts how many of these simulations are in each <a href='https://www.predictit.org/Market/2956/How-many-tweets-will-%40realDonaldTrump-post-from-noon-Feb-8-to-noon-Feb-15'>PredictIt bucket</a>. It uses these counts to assign probabilities to each bucket. 
+
+I ran the model last night and compared the results to the probabilities on PredictIt -- all of my predictions were within three percentage points of those online, with the exception of one bucket that was eight off (the "55 or more" bucket, which my model thought was less likely than the market). Running it again this morning, however, something was off -- the odds in the market had shifted considerably toward preferring less tweets, at odds with my model. 
+
+Confused, I read the comments, which indicated that seven tweets had been removed from Trump's account this morning. However, the removed tweets were from a while ago, so I was confused why they would make a difference in this week's count. Then I read the market rules:
+
+> _"The number of total tweets posted by the Twitter account realDonaldTrump shall exceed 34,455 by the number or range identified in the question...The number by which the total tweets at expiration exceeds 34,455 may not equal the number of tweets actually posted over that time period ... [since] **tweets may be deleted prior to expiration of this market**."_
+
+D'oh. That didn't seem like the smartest rule. It meant the number of weekly tweets could be negative if Trump deleted a whole bunch of tweets from before the week. There weren't many options for modeling these purges with the data at hand. Therefore, I decided to assume that no more tweets would be deleted this week, and subtracted the 7 missing tweets from the simulation. 
+
+I ran the model on Friday evening, with the following histogram depicting the distribution of simulated total weekly tweet counts:
+
+![Simulated tweet histogram]({{site.base_url}}/assets/images/tweet_counts_poisson_glm_blog/simulated_tweet_hist.png)
+
+The following plot shows the simulated trajectories for the week, with 4 paths randomly colored for emphasis:
+
+![Simulated tweet paths]({{site.base_url}}/assets/images/tweet_counts_poisson_glm_blog/simulated_tweet_paths.png)
+
+Finally, the following table shows my model probabilities, compared to those on PredictIt as of this writing:
+
+\begin{array}{c|cccc}
+\text{Number of tweets} & \text{"Yes" Price} & \text{Model "Yes" Probability} & \text{"No" Price} & \text{Model "No" Probability} \\\
+\hline\text{24 or fewer}  & $0.11 & 1\% & $0.90 & 99\%\\\
+\text{25 - 29}  & $0.14 & 7\% & $0.88 & 93\%\\\
+\text{30 - 34}  & $0.23 & 24\% & $0.79 & 76\%\\\
+\text{35 - 39}  & $0.31 & 35\% & $0.73 & 65\%\\\
+\text{40 - 44}  & $0.19 & 23\% & $0.84 & 77\%\\\
+\text{45 - 49}  & $0.09 & 9\% & $0.93 & 91\%\\\
+\text{50 - 54}  & $0.05 & 2\% & $0.96 & 98\%\\\
+\text{55 or more}  & $0.04 & 0.3\% & $0.97 & 99.7\%\\\
+\end{array}
+
+Thus, compared to my model, the market believes Trump will have a quiet week. This may reflect the possibility of Trump deleting more tweets, or it could be some market knowledge that Trump will be preoccupied by various presidential engagements. 
+
+In general, however, the market prices align nicely with the model; no two buckets (beside the first two) disagree with the model probability by more than 4%. I think this is definitely a more robust model than the simple Poisson process, as the probabilities align quite well with the market. Thus, not expecting much in returns, I bought shares of "No" for "24 or fewer" and "25-29" and "Yes" for "35-39" and "40-44". 
 
 ## Model
 
@@ -47,47 +85,13 @@ Not perfect, but reasonable given the basic set of predictors, and it appears to
 
 I was initially worried about overdispersion -- recall that in a Poisson model, the variance of the output $$y_t$$ is equal to the mean, so if the variance in reality is larger than the mean, a Poisson would be a poor approximation. Thus, I also tried using a negative binomial to model the data, which performed worse in training log-likelihood and training error. As a result, I stuck with the original Poisson model. 
 
-One final note about the model -- it predicts tweets for full-day length intervals, i.e. noon Monday to noon Tuesday. However, what if it's 8 pm on Sunday, and we're curious how often Trump will tweet before Wednesday at noon? Predicting for 2 more rows would not be enough (finishing Tuesday at 8 pm), and using 3 would be too much (finishing Wednesday at 8 pm). Thus, I decided to run an additional model that rounded at the nearest noon. That is, I duplicated the above model, except I used the number of tweets between now and the next noon as the response variable. For example, if I were running the program at 8 pm on Sunday, I would model how often Trump tweets between 8 pm and the following day's noon for every day in the history. Then, I would use this set of coefficients to predict the tweets between now and the next noon, and then finish off all remaining full days with the coefficients from the aforementioned model. (If none of this paragraph makes sense, don't worry about it, as it's a pretty minor detail.)
-
-## Results
-
 After estimating all the coefficients, it was time to model the probability of finishing in each <a href='https://www.predictit.org/Market/2956/How-many-tweets-will-%40realDonaldTrump-post-from-noon-Feb-8-to-noon-Feb-15'>bucket on PredictIt</a>. Because the number of tweets in one day would affect the number of tweets for the next day, I couldn't model these probabilities analytically. Thus, I ran 5,000 simulations to approximate the probability of being in each bucket by Wednesday noon. 
 
-I ran the model last night and compared the results to the probabilities on PredictIt -- all of my predictions were within three percentage points of those on PredictIt, with the exception of one bucket that was eight off (the "55 or more" bucket, which my model thought was less likely than the market). Running it again this morning, however, something was off -- the odds in the market had shifted considerably toward preferring less tweets, at odds with my model. 
+One final note about the model -- it predicts tweets for full-day length intervals, i.e. noon Monday to noon Tuesday. However, what if it's 8 pm on Sunday, and we're curious how often Trump will tweet before Wednesday at noon? Predicting for 2 more rows would not be enough (finishing Tuesday at 8 pm), and using 3 would be too much (finishing Wednesday at 8 pm). Thus, I decided to run an additional model that rounded at the nearest noon. That is, I duplicated the above model, except I used the number of tweets between now and the next noon as the response variable. For example, if I were running the program at 8 pm on Sunday, I would model how often Trump tweets between 8 pm and the following day's noon for every day in the history. Then, I would use this set of coefficients to predict the tweets between now and the next noon, and then finish off all remaining full days with the coefficients from the aforementioned model. (If none of this paragraph makes sense, don't worry about it, as it's a pretty minor detail.)
 
-Confused, I read the comments, which indicated that 7 tweets had been removed from Trump's account this morning. However, the removed tweets were from a while ago, so I was confused why they would make a difference in this week's count. Then I read the market rules:
+In the future, I'd be interested in more complicated variations, such as modeling tweet deletions or using a larger set of predictors (along with performing a more rigorous dispersion analysis).
 
-> _"The number of total tweets posted by the Twitter account realDonaldTrump shall exceed 34,455 by the number or range identified in the question...The number by which the total tweets at expiration exceeds 34,455 may not equal the number of tweets actually posted over that time period ... [since] **tweets may be deleted prior to expiration of this market**."_
-
-D'oh. That doesn't seem like the smartest rule. It means it's possible for the number of weekly tweets to be negative, if Trump deletes a whole bunch of tweets from before the week. There were limited options for modeling these deletions with the data at hand. Therefore, I decided to assume that no more tweets would be deleted this week, and subtracted the 7 missing tweets from the simulation. 
-
-Running the model on Friday evening, the following histogram depicts the distribution of simulated tweet counts by Wednesday noon (this accounts for the tweets that have already occurred in the week, along with those that have been deleted):
-
-![Simulated tweet histogram]({{site.base_url}}/assets/images/tweet_counts_poisson_glm_blog/simulated_tweet_hist.png)
-
-The following plot shows the simulated trajectories for the week, with 4 paths randomly colored for emphasis:
-
-![Simulated tweet paths]({{site.base_url}}/assets/images/tweet_counts_poisson_glm_blog/simulated_tweet_paths.png)
-
-Finally, the following table shows my model probabilities, compared to those on PredictIt as of this writing:
-
-\begin{array}{c|cccc}
-\text{Number of tweets} & \text{"Yes" Price} & \text{Model "Yes" Probability} & \text{"No" Price} & \text{Model "No" Probability} \\\
-\hline\text{24 or fewer}  & $0.11 & 1\% & $0.90 & 99\%\\\
-\text{25 - 29}  & $0.14 & 7\% & $0.88 & 93\%\\\
-\text{30 - 34}  & $0.23 & 24\% & $0.79 & 76\%\\\
-\text{35 - 39}  & $0.31 & 35\% & $0.73 & 65\%\\\
-\text{40 - 44}  & $0.19 & 23\% & $0.84 & 77\%\\\
-\text{45 - 49}  & $0.09 & 9\% & $0.93 & 91\%\\\
-\text{50 - 54}  & $0.05 & 2\% & $0.96 & 98\%\\\
-\text{55 or more}  & $0.04 & 0.3\% & $0.97 & 99.7\%\\\
-\end{array}
-
-Thus, my model disagrees most with the smaller count buckets -- the market believes there's a higher chance of relatively few weekly tweets than my model does. This may reflect the possibility of deleting more tweets, or some market knowledge that Trump has a busy week ahead (which my model does not account for). 
-
-In general, however, the market prices align nicely with the model; no two buckets (beside the first two) disagree with the model probability by more than 4%. Thus, not expecting much in returns, I bought shares of "No" for "24 or fewer" and "25-29" and "Yes" for "35-39" and "40-44". 
-
-I think this is definitely a more robust model than the simple Poisson process, as the probabilities align quite well with the market. In the future, I'd be interested in more complicated variations, such as modeling tweet deletions or using a larger set of predictors (along with performing a more rigorous dispersion analysis).  
+All code is available <a href='https://github.com/keyonvafa/tweet-count-poisson-blog'>here</a>.  
 
 ## Acknowledgments
 Thanks to <a href='http://www.columbia.edu/~swl2133/'>Scott Linderman</a> for suggesting an autoregressive GLM model. Also thanks to <a href='http://twitter.com/Teddy__kim'>Teddy</a> <a href='https://www.instagram.com/haveyoumettedd/'>Kim</a> for various suggestions and brainstorming help. 
