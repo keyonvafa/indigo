@@ -37,7 +37,7 @@ I used the maximum likelihood estimate (the average) to predict the rate, which 
 Here are my estimates compared to their price on PredictIt:
 
 \begin{array}{c|cccc}
-\text{Approval Rating} & \text{"Yes" Price} & \text{Model "Yes" Probability} & \text{"No" Price} & \text{Model "No" Probability} \\\
+\text{Number of tweets} & \text{"Yes" Price} & \text{Model "Yes" Probability} & \text{"No" Price} & \text{Model "No" Probability} \\\
 \hline\text{29 or fewer}  & $0.05 & 3\% & $0.97 & 97\%\\\
 \text{30 - 34}  & $0.09 & 15\% & $0.93 & 85\%\\\
 \text{35 - 39}  & $0.18 & 33\% & $0.83 & 67\%\\\
@@ -53,3 +53,7 @@ It looks like my model prefers lower tweet counts since it accounts for all post
 At any rate, I decided to buy 5 shares of "Yes" for 35-39 tweets, 2 shares of "No" for 45-49 tweets, and 2 shares of "No" for 50-54 tweets (everywhere my model differed with the market prices by at least 10 percentage points). Stay tuned for updates on how I do, along with a more complicated model. 
 
 All code is available <a href='https://github.com/keyonvafa/tweet-count-poisson-blog'>here</a>.
+
+## Update
+
+Trump ended up tweeting 44 times; therefore, I lost the "Yes" for 35-39 tweets, but I won both "No" markets I invested in, 45-49 and 50-54. Though it's impossible to tell with a sample size of one, it seems like this model is a good start -- Trump's final tweet count was in the 40-44 bucket, which was deemed the second-most likely bucket by the model, at 31%.
