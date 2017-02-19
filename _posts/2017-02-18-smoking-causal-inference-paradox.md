@@ -1,7 +1,7 @@
 ---
 title: Lies, Damned Lies, and Causal Inference
 layout: post
-date: 2017-02-17 17:00
+date: 2017-02-18 17:00
 headerImage: false
 blog: true
 star: false
