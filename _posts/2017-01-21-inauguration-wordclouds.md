@@ -4,7 +4,7 @@ layout: post
 date: 2017-01-21 11:00
 headerImage: false
 blog: true
-star: false
+star: true
 author: keyonvafa
 description: Illustrating inauguration speeches with word clouds.
 ---

@@ -4,7 +4,7 @@ layout: post
 date: 2017-01-04 05:20
 headerImage: false
 blog: true
-star: false
+star: true
 author: keyonvafa
 description: Applying Guassian Proccesses to PredictIt
 ---

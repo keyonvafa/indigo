@@ -4,7 +4,7 @@ layout: post
 date: 2017-02-10 17:00
 headerImage: false
 blog: true
-star: false
+star: true
 author: keyonvafa
 description: Modeling tweet counts as autoregressive Poisson GLMs, then used for betting on PredictIt
 ---
@@ -94,4 +94,4 @@ In the future, I'd be interested in more complicated variations, such as modelin
 All code is available <a href='https://github.com/keyonvafa/tweet-count-poisson-blog'>here</a>.  
 
 ## Acknowledgments
-Thanks to <a href='http://www.columbia.edu/~swl2133/'>Scott Linderman</a> for suggesting an autoregressive GLM model. Also thanks to <a href='http://twitter.com/Teddy__kim'>Teddy</a> <a href='https://www.instagram.com/haveyoumettedd/'>Kim</a> for various suggestions and brainstorming help. 
+Thanks to <a href='http://www.columbia.edu/~swl2133/'>Scott Linderman</a> for suggesting an autoregressive GLM model. Also thanks to <a href='https://medium.com/@Teddy__Kim'>Teddy Kim</a> for various suggestions and brainstorming help. 
