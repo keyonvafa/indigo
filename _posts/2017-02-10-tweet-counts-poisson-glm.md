@@ -91,7 +91,11 @@ One final note about the model -- it predicts tweets for full-day length interva
 
 In the future, I'd be interested in more complicated variations, such as modeling tweet deletions or using a larger set of predictors (along with performing a more rigorous dispersion analysis).
 
-All code is available <a href='https://github.com/keyonvafa/tweet-count-poisson-blog'>here</a>.  
+All code is available <a href='https://github.com/keyonvafa/tweet-count-poisson-blog'>here</a>. 
+
+## Update
+
+I bought shares in four markets (two Yes's and two No's). The tweet count ended up being in one of the Yes markets, good enough for a 25% return. That's a great return, but it's too early to say anything conclusive about the model because $$N = 1$$. That being said, I'll continue to use the GLM because the results seem promising so far.   
 
 ## Acknowledgments
 Thanks to <a href='http://www.columbia.edu/~swl2133/'>Scott Linderman</a> for suggesting an autoregressive GLM model. Also thanks to <a href='https://medium.com/@Teddy__Kim'>Teddy Kim</a> for various suggestions and brainstorming help. 
