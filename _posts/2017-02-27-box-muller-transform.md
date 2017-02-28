@@ -33,7 +33,7 @@ $$
 
 Thus, once we have $$R^2$$, the squared distance between $$(X,Y)$$ and the origin, the joint distribution of $$X$$ and $$Y$$ is uniform. That is, as long as $$(X,Y)$$ is a pair satisfying $$X^2 + Y^2 = R^2$$, it can be any point on the circle with radius $$R$$. As a result, we can simply take $$\theta = 2\pi U_2$$, where $$U_2 \sim \text{Unif}(0,1).$$
 
-Putting all these results together, if we take $$R = \sqrt{-2\log U_1}$$ and $$\theta = 2\pi U_1$$ for $$U_1, U_2 \sim \text{Unif}(0,1)$$, we have the polar coordinates for two independent standard normal draws. Thus, converting back to Cartesian, we have 
+Putting all these results together, if we take $$R = \sqrt{-2\log U_1}$$ and $$\theta = 2\pi U_2$$ for $$U_1, U_2 \sim \text{Unif}(0,1)$$, we have the polar coordinates for two independent standard normal draws. Thus, converting back to Cartesian, we have 
 
 $$
 X = R\cos\theta = \sqrt{-2\log U_1}\cos(2\pi U_2)\\
