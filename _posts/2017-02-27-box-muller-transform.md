@@ -13,7 +13,7 @@ Every statistician has a favorite way of generating samples from a distribution 
 
 One of the most interesting and counterintuitive sampling techniques is the Box-Muller transform. I'm not sure how widely it's used today, but given two samples from a uniform distribution, it can generate two _independent_ samples from a standard normal distribution.
 
-Given a uniform sample $$U \sim \text{Unif}(0,1)$$, we can generally sample from a distribution with cdf $$F$$ by taking $$F^{-1}(U)$$. Since we cannot write the normal cdf in closed form, we must rule out the inverse cdf method.
+<!--Given a uniform sample $$U \sim \text{Unif}(0,1)$$, we can generally sample from a distribution with cdf $$F$$ by taking $$F^{-1}(U)$$. Since we cannot write the normal cdf in closed form, we must rule out the inverse cdf method.-->
 
 The idea behind the Box-Muller transform is to imagine two independent samples $$X, Y \sim \mathcal{N}(0,1)$$ plotted in the Cartesian plane, and then represent these points as polar coordinates. Recall, to transform to polar, we need the distance $$R$$ between $$(X,Y)$$ and the origin along with $$\theta$$, the angle this line segment makes with the x-axis.
 
