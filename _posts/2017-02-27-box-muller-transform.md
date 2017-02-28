@@ -6,7 +6,7 @@ headerImage: false
 blog: true
 star: false
 author: keyonvafa
-description: Sampling normal random variables with a uniform distribution.  
+description: Sampling normal random variables using uniform draws.  
 ---
 
 Every statistician has a favorite way of generating samples from a distribution (not sure if I need a citation for this one). From <a href='https://en.wikipedia.org/wiki/Rejection_sampling'>rejection sampling</a> to <a href='https://arxiv.org/pdf/1206.1901.pdf'>Hamiltonian Monte Carlo</a>, there are countless methods to choose from (my personal favorite is ``rnorm``).
