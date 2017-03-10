@@ -4,7 +4,7 @@ layout: post
 date: 2017-03-09 2:00
 headerImage: false
 blog: true
-star: false
+star: true
 author: keyonvafa
 description: Bayesian ideal point modeling to assess the political views of US senators based off voting records.  
 ---
