@@ -20,7 +20,7 @@ More extreme scores (i.e. away from zero) represent more extreme political views
 The basic model is as follows. Consider a legislator $$u$$ and a particular bill $$d$$. The vote $$u$$ places on $$d$$ is denoted as a binary variable, $$v_{ud} = 1$$ for Yea and $$v_{ud} = 0$$ for Nay. Each legislator has an _ideal point_ $$x_u$$; a value of 0 is political neutrality, whereas large values in either direction indicate more political extremism in the respective direction. Every bill has its own _discrimination_ $$b_d$$, which is on the same scale as the ideal points for legislators. If $$x_u*b_d$$ is high, the legislator is likely to vote for the bill, and if the value is low, the legislator is less likely to vote. Finally, each bill also has an offset $$a_d$$ that indicates how popular the bill is overall, regardless of political affiliation. Formally, the model is as follows:
 
 $$
-P(v_{ud} = 1) = \sigma(x_ib_d + a_d),
+P(v_{ud} = 1) = \sigma(x_ub_d + a_d),
 $$
 
 where $$\sigma(\cdot)$$ is some sigmoidal function, such as the inverse-logit or the standard normal CDF. If a senator didn't vote on a particular bill, this data is considered missing at random. 
