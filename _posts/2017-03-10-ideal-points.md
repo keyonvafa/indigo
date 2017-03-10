@@ -25,6 +25,6 @@ $$
 
 where $$\sigma(\cdot)$$ is some sigmoidal function, such as the inverse-logit or the standard normal CDF. If a senator didn't vote on a particular bill, this data is considered missing at random. 
 
-Inference requires learning the vectors $$X, B$$, and $$D$$. I took a Bayesian approach and put (independent) normal priors on each variable. I then used an EM algorithm derived by <a href='http://imai.princeton.edu/research/files/fastideal.pdf'>Kosuke Imai et al</a>. The E-Step and M-Step are described in full detail in the paper, and I followed their setup, except I removed Senators with less than 50 votes, and I stopped after 500 iterations.
+Inference requires learning the vectors $$X, B$$, and $$A$$. I took a Bayesian approach and put (independent) normal priors on each variable. I then used an EM algorithm derived by <a href='http://imai.princeton.edu/research/files/fastideal.pdf'>Kosuke Imai et al</a>. The E-Step and M-Step are described in full detail in the paper, and I followed their setup, except I removed Senators with less than 50 votes, and I stopped after 500 iterations.
 
 All my code is available <a href='https://github.com/keyonvafa/ideal-point-blog'>here</a>. 
