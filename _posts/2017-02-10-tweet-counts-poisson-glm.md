@@ -98,4 +98,4 @@ All code is available <a href='https://github.com/keyonvafa/tweet-count-poisson-
 I bought shares in four markets (two Yes's and two No's). The tweet count ended up being in one of the Yes markets, good enough for a 25% return. That's a great return, but it's too early to say anything conclusive about the model because $$N = 1$$. That being said, I'll continue to use the GLM because the results seem promising so far.   
 
 ## Acknowledgments
-Thanks to <a href='http://www.columbia.edu/~swl2133/'>Scott Linderman</a> for suggesting an autoregressive GLM model. Also thanks to <a href='https://medium.com/@Teddy__Kim'>Teddy Kim</a> for various suggestions and brainstorming help. 
+Thanks to <a href='http://www.columbia.edu/~swl2133/'>Scott Linderman</a> for suggesting an autoregressive GLM model. Also thanks to <a href='https://medium.com/@Teddy__Kim'>Teddy Kim</a> for various suggestions and brainstorming help. A final thank you to <a href='http://stat.columbia.edu/department-directory/name/owen-ward/'>Owen Ward</a> for suggesting the connection between spikes and debates in the model.
