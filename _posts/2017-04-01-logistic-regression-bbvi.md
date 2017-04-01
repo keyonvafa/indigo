@@ -29,7 +29,7 @@ $$
 
 So instead of evaluating a closed form expression for the gradient, we can use Monte Carlo samples and take the average to get a noisy estimate of the gradient. That is, for our current set of parameters $$\lambda$$, we can sample $$z_s \sim q(z \vert \lambda)$$ for $$s \in 1, \dots, S$$, and for each of these samples evaluate the above expression, replacing $$z$$ with the sample $$z_s$$. If we take the mean over all samples, we will have a (noisy) estimate for the gradient. Finally, by applying an appropriate step-size at every iteration, we can optimize the ELBO with stochastic gradient descent. 
 
-The above expression may look daunting, but it's straightforward to evaluate. The first term is the gradient of $$\log q(z \vert \lambda)$$, which is also known as the score function. As we'll see in the logistic regression example, this expression is straightforward to evaluate for many distributions, but we can even use automatic differentiation to streamline this process if we have a more complicated model (or if we're feeling lazy). The next two terms are log-likelihoods that we specify, and are straightforward to evaluate since we have a sample $$z_s$$.
+The above expression may look daunting, but it's straightforward to evaluate. The first term is the gradient of $$\log q(z \vert \lambda)$$, which is also known as the score function. As we'll see in the logistic regression example, this expression is straightforward to evaluate for many distributions, but we can even use automatic differentiation to streamline this process if we have a more complicated model (or if we're feeling lazy). The next two terms are log-likelihoods that we specify, so we can compute them with a sample $$z_s$$.
 
 ## BBVI for Bayesian Logistic Regression
 
