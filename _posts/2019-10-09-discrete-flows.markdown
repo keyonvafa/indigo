@@ -1,5 +1,5 @@
 ---
-title: "Discrete Flows"
+title: "Discrete Flows: Invertible Generative Models of Discrete Data"
 layout: post
 date: 2019-10-09 15:28
 headerImage: false
