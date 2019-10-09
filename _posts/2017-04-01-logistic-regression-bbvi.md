@@ -9,7 +9,7 @@ author: keyonvafa
 description: A brief tutorial covering black box variational inference for Bayesian logistic regression.
 ---
 
-A couple of weeks ago, I wrote about <a href='http://keyonvafa.com/variational-inference-probit-regression/'>variational inference for probit regression</a>, which involved some pretty ugly algebra. Although variational inference is a powerful method for approximate Bayesian inference, it can be tedious to come up with the variational updates for every model (which aren't always available in closed-form), and these updates are model-specific. 
+A couple of weeks ago, I wrote about <a href='https://keyonvafa.com/variational-inference-probit-regression/'>variational inference for probit regression</a>, which involved some pretty ugly algebra. Although variational inference is a powerful method for approximate Bayesian inference, it can be tedious to come up with the variational updates for every model (which aren't always available in closed-form), and these updates are model-specific. 
 
 <a href='http://www.cs.columbia.edu/~blei/papers/RanganathGerrishBlei2014.pdf'>Black Box Variational Inference</a> (BBVI) offers a solution to this problem. Instead of computing all the updates in closed form, BBVI uses _sampling_ to approximate the gradient of our bound, and then uses stochastic optimization to optimize this bound. Below, I'll briefly go over the main ideas behind BBVI, and then demonstrate how easy it makes inference for Bayesian logistic regression. I want to emphasize that the <a href='http://www.cs.columbia.edu/~blei/papers/RanganathGerrishBlei2014.pdf'>original BBVI paper</a> describes the method better than I ever could, so I encourage you to read the paper as well. 
 

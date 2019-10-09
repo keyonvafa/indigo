@@ -9,7 +9,7 @@ author: keyonvafa
 description: A follow-up to ideal point modeling, comparing with PCA
 ---
 
-A couple of weeks ago, I wrote a <a href='http://keyonvafa.com/ideal-points/'>blog post about modeling ideal points of US senators</a>. I wanted to follow up (very briefly), since I was curious about comparing the Bayesian method there with Principal Component Analysis (PCA).
+A couple of weeks ago, I wrote a <a href='https://keyonvafa.com/ideal-points/'>blog post about modeling ideal points of US senators</a>. I wanted to follow up (very briefly), since I was curious about comparing the Bayesian method there with Principal Component Analysis (PCA).
 
 Here are the (new) results performing PCA on the voting record:
 

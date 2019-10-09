@@ -9,7 +9,7 @@ author: keyonvafa
 description: Modeling the number of weekly Trump tweets, used for betting on PredictIt
 ---
 
-I've written before on <a href='http://keyonvafa.com/gp-predictit/'> using statistics to bet on PredictIt's political markets</a>, and this morning a new market caught my eye: <a href='https://www.predictit.org/Market/2934/How-many-tweets-will-%40realDonaldTrump-post-from-noon-Feb-1-to-noon-Feb-8'> How many tweets will Donald Trump post from noon Feb. 1 to noon Feb. 8?</a>. If statistics can be used to inform any prediction market, it's this one, so I figured I'd give this counting problem a go.
+I've written before on <a href='https://keyonvafa.com/gp-predictit/'> using statistics to bet on PredictIt's political markets</a>, and this morning a new market caught my eye: <a href='https://www.predictit.org/Market/2934/How-many-tweets-will-%40realDonaldTrump-post-from-noon-Feb-1-to-noon-Feb-8'> How many tweets will Donald Trump post from noon Feb. 1 to noon Feb. 8?</a>. If statistics can be used to inform any prediction market, it's this one, so I figured I'd give this counting problem a go.
 
 At the time of this writing, the market looked like the following: 8 buckets for the number of tweet counts, so I would need to assign a probability to each bucket:
 
