@@ -17,7 +17,7 @@ My thesis is <a href="{{site.base_url}}/files/thesis.pdf">available here</a>. Th
 
 ---
 
-![Deep GP Posterior]({{ site.url }}/assets/images/step_1_2_layers_preds.png)
+![Deep GP Posterior]({{ site.url }}/assets/images/projects/step_1_2_layers_preds.png)
 <figcaption class="caption">Posterior draws from a standard GP and a 2-layer deep GP trained on noisy step function data. The 2-layer deep GP is better equipped to model the non-stationarity of the data and capture our uncertainty outside of the input region.</figcaption>
 
 ---
