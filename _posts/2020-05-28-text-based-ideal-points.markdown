@@ -23,8 +23,11 @@ K. Vafa, S. Naidu, and D. Blei. [**Text-Based Ideal Points**](https://arxiv.org/
 
 ---
 
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~keyonvafa/228.embed"></iframe>
+
+<!-- 
 ![Senate speech ideal point comparisons]({{ site.url }}/assets/images/projects/senate_ideal_point_comparisons.jpg)
 <figcaption class="caption">The ideal points learned by the TBIP for senator speeches and tweets are highly correlated with the classical vote ideal points. Senators are coded by their political party (Democrats in blue circles, Republicans in red x’s). Although the algorithm does not have access to these labels, the TBIP almost completely separates parties.</figcaption>
 
-
+ -->
 
