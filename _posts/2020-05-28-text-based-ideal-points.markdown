@@ -12,26 +12,26 @@ externalLink: false
 ---
 
 
-Ideal point models analyze lawmakers' votes to quantify their political positions, or ideal points. But votes are not the only way to express a political position. Lawmakers also give speeches, release press statements, and post tweets. [In this paper](https://arxiv.org/abs/2005.04232), we introduce the text-based ideal point model (TBIP), an unsupervised probabilistic topic model that analyzes texts to quantify the political positions of its authors. We demonstrate the TBIP with two types of politicized text data: U.S. Senate speeches and senator tweets. Though the model does not analyze their votes or political affiliations, the TBIP separates lawmakers by party, learns interpretable politicized topics, and infers ideal points close to the classical vote-based ideal points. One benefit of analyzing texts, as opposed to votes, is that the TBIP can estimate ideal points of anyone who authors political texts, including non-voting actors. To this end, we use it to study tweets from the 2020 Democratic presidential candidates. Using only the texts of their tweets, it identifies them along an interpretable progressive-to-moderate spectrum.
+Ideal point models analyze lawmakers' votes to quantify their political positions, or ideal points. But votes are not the only way to express a political position. Lawmakers also give speeches, release press statements, and post tweets. [In this paper](https://www.aclweb.org/anthology/2020.acl-main.475/), we introduce the text-based ideal point model (TBIP), an unsupervised probabilistic topic model that analyzes texts to quantify the political positions of its authors. We demonstrate the TBIP with two types of politicized text data: U.S. Senate speeches and senator tweets. Though the model does not analyze their votes or political affiliations, the TBIP separates lawmakers by party, learns interpretable politicized topics, and infers ideal points close to the classical vote-based ideal points. One benefit of analyzing texts, as opposed to votes, is that the TBIP can estimate ideal points of anyone who authors political texts, including non-voting actors. To this end, we use it to study tweets from the 2020 Democratic presidential candidates. Using only the texts of their tweets, it identifies them along an interpretable progressive-to-moderate spectrum.
 
 [PyTorch](https://github.com/keyonvafa/tbip/blob/master/pytorch/tbip.py) and [Tensorflow](https://github.com/keyonvafa/tbip/blob/master/tbip.py) implementations available on [Github](https://github.com/keyonvafa/tbip).
 
 [Notebook with tutorial available on Colab](https://colab.research.google.com/drive/1_KkVI2lGtPdgsHSKDIMhSLCKkHvBQ4LO?usp=sharing).
 
 
-The plots below show examples of ideological topics, and how they change with ideal points:
+The plots below show examples of ideological topics for U.S. Senate speeches (2015-2017). Move the slider to see how the ideological topic changes as a function of ideal point:
 
 <iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~keyonvafa/228.embed?&link=false"></iframe>
 
 <iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~keyonvafa/224.embed?&link=false"></iframe>
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~keyonvafa/226.embed?&link=false"></iframe>
-
 <iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~keyonvafa/230.embed?&link=false"></iframe>
+
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~keyonvafa/226.embed?&link=false"></iframe>
 
 ---
 
-K. Vafa, S. Naidu, and D. Blei. [**Text-Based Ideal Points**](https://arxiv.org/abs/2005.04232). In _Proceedings of ACL_ (to appear), 2020.
+K. Vafa, S. Naidu, and D. Blei. [**Text-Based Ideal Points**](https://www.aclweb.org/anthology/2020.acl-main.475/). In _Proceedings of ACL_, 2020.
 
 
 <!-- ---
