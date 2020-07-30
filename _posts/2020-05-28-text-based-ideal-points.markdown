@@ -11,10 +11,12 @@ externalLink: false
 
 ---
 
+[[PDF](https://www.aclweb.org/anthology/2020.acl-main.475.pdf)] [[Code](https://github.com/keyonvafa/tbip)] [[Tutorial](https://colab.research.google.com/drive/1_KkVI2lGtPdgsHSKDIMhSLCKkHvBQ4LO?usp=sharing)] [[Slides]({{site.base_url}}/assets/slides/tbip_slides.pdf)]
+
 
 Ideal point models analyze lawmakers' votes to quantify their political positions, or ideal points. But votes are not the only way to express a political position. Lawmakers also give speeches, release press statements, and post tweets. [In this paper](https://www.aclweb.org/anthology/2020.acl-main.475/), we introduce the text-based ideal point model (TBIP), an unsupervised probabilistic topic model that analyzes texts to quantify the political positions of its authors. We demonstrate the TBIP with two types of politicized text data: U.S. Senate speeches and senator tweets. Though the model does not analyze their votes or political affiliations, the TBIP separates lawmakers by party, learns interpretable politicized topics, and infers ideal points close to the classical vote-based ideal points. One benefit of analyzing texts, as opposed to votes, is that the TBIP can estimate ideal points of anyone who authors political texts, including non-voting actors. To this end, we use it to study tweets from the 2020 Democratic presidential candidates. Using only the texts of their tweets, it identifies them along an interpretable progressive-to-moderate spectrum.
 
-[PyTorch](https://github.com/keyonvafa/tbip/blob/master/pytorch/tbip.py) and [Tensorflow](https://github.com/keyonvafa/tbip/blob/master/tbip.py) implementations available on [Github](https://github.com/keyonvafa/tbip).
+<!-- [PyTorch](https://github.com/keyonvafa/tbip/blob/master/pytorch/tbip.py) and [Tensorflow](https://github.com/keyonvafa/tbip/blob/master/tbip.py) implementations available on [Github](https://github.com/keyonvafa/tbip). -->
 
 [Notebook with tutorial available on Colab](https://colab.research.google.com/drive/1_KkVI2lGtPdgsHSKDIMhSLCKkHvBQ4LO?usp=sharing).
 
