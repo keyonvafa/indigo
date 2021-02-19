@@ -23,13 +23,13 @@ Ideal point models analyze lawmakers' votes to quantify their political position
 
 The plots below show examples of ideological topics for U.S. Senate speeches (2015-2017). Move the slider to see how the ideological topic changes as a function of ideal point:
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~keyonvafa/228.embed?&link=false"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~keyonvafa/256.embed?&link=false"></iframe>
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~keyonvafa/224.embed?&link=false"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~keyonvafa/252.embed?&link=false"></iframe>
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~keyonvafa/230.embed?&link=false"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~keyonvafa/250.embed?&link=false"></iframe>
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~keyonvafa/226.embed?&link=false"></iframe>
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plotly.com/~keyonvafa/254.embed?&link=false"></iframe>
 
 ---
 
